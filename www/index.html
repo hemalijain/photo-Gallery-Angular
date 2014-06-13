@@ -1,46 +1,194 @@
 <!DOCTYPE html>
-<html ng-app="example366" ng-controller='MainCtrl'>
-<head>
-    <meta charset="utf-8" />
-    <meta name="author" content="Script Tutorials" />
-    <title>Photo Gallery with AngularJS and CSS3 | Script Tutorials</title>
-    <meta name="description" content="Photo Gallery with AngularJS and CSS3 - demo page">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<html lang="en" class="no-js demo-2">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>BookBlock: A Content Flip Plugin - Demo 2</title>
+        <meta name="description" content="Bookblock: A Content Flip Plugin - Demo 2" />
+        <meta name="keywords" content="javascript, jquery, plugin, css3, flip, page, 3d, booklet, book, perspective" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/default.css" />
+        <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+        <!-- custom demo style -->
+        <link rel="stylesheet" type="text/css" href="css/demo2.css" />
+        <link rel="stylesheet" type="text/css" href="css/calendar.css" />
+        <script src="js/modernizr.custom.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Top Navigation -->
+           
+          
+            <div class="main clearfix">
+                <div class="bb-custom-wrapper">
+                    <div id="bb-bookblock" class="bb-bookblock">
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/1.jpg" alt="image01"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>Style
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/2.jpg" alt="image02"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>February 2013</h2>
+                               
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/3.jpg" alt="image03"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>March 2013</h2>
+                                
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/4.jpg" alt="image04"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>April 2013</h2>
+                                
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/5.jpg" alt="image05"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>May 2013</h2>
+                                
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/6.jpg" alt="image06"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>June 2013</h2>
+                                
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/7.jpg" alt="image07"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>July 2013</h2>
+                                
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/8.jpg" alt="image08"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>August 2013</h2>
+                                
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/9.jpg" alt="image09"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>September 2013</h2>
+                                
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/10.jpg" alt="image10"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>October 2013</h2>
+                                
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/11.jpg" alt="image11"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>November 2013</h2>
+                                
+                            </div>
+                        </div>
+                        <div class="bb-item">
+                            <img class="bb-custom-img" src="img/demo2/12.jpg" alt="image12"/>
+                            <div class="fc-calendar-wrap">
+                                <h2>December 2013</h2>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <nav>
+                        <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
+                        <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
+                    </nav>
+                   
+                </div>
+            </div>
+        </div><!-- /container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="js/jquery.bookblock.js"></script>
+        <script>
+            var Page = (function() {
+                
+                var config = {
+                        $bookBlock : $( '#bb-bookblock' ),
+                        $navNext : $( '#bb-nav-next' ),
+                        $navPrev : $( '#bb-nav-prev' )
+                    },
+                    init = function() {
+                        config.$bookBlock.bookblock( {
+                            orientation : 'horizontal',
+                            speed : 700
+                        } );
+                        initEvents();
+                    },
+                    initEvents = function() {
 
-    <!-- add styles -->
-    <link href="css/app.css" rel="stylesheet" type="text/css" />
+                        var $slides = config.$bookBlock.children();
+                        
+                        // add navigation events
+                        config.$navNext.on( 'click touchstart', function() {
+                            config.$bookBlock.bookblock( 'next' );
+                            return false;
+                        } );
 
-    <!-- add javascripts -->
-    <script src="js/jquery.js"></script>
-    <script src="http://code.angularjs.org/1.2.0rc1/angular.js"></script>
-    <script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
-    <script src="http://code.angularjs.org/1.2.0rc1/angular-touch.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/routes.js"></script>
-  <body ng-controller="MainCtrl">
-    <header>
-        <a href="http://www.script-tutorials.com/demos/366/index.html" class="logo"></a>
-    </header>
+                        config.$navPrev.on( 'click touchstart', function() {
+                            config.$bookBlock.bookblock( 'prev' );
+                            return false;
+                        } );
 
-    <!-- slider container -->
-    <div class="container slider">
+                        $slides.on( {
+                            'swipedown' : function( event ) {
+                                config.$bookBlock.bookblock( 'next' );
+                                return false;
+                            },
+                            'swipeup' : function( event ) {
+                                config.$bookBlock.bookblock( 'prev' );
+                                return false;
+                            }
+                        } );
+                        // add keyboard events
+                        $( document ).keydown( function(e) {
+                            var keyCode = e.keyCode || e.which,
+                                arrow = {
+                                    left : 37,
+                                    up : 38,
+                                    right : 39,
+                                    down : 40
+                                };
 
-        <!-- enumerate all photos -->
-        <img ng-repeat="photo in photos" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="{{photo.src}}" />
+                            switch (keyCode) {
+                                case arrow.up:
+                                    config.$bookBlock.bookblock( 'prev' );
+                                    e.preventDefault();
+                                    break;
+                                case arrow.down:
+                                    config.$bookBlock.bookblock( 'next' );
+                                    e.preventDefault();
+                                    break;
+                            }
 
-        <!-- prev / next controls -->
-        <a class="arrow prev" href="#" ng-click="showPrev()"></a>
-        <a class="arrow next" href="#" ng-click="showNext()"></a>
+                        } );
+                    };
 
-        <!-- extra navigation controls -->
-        <ul class="nav">
-            <li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
-                <img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);" />
-            </li>
-        </ul>
+                    return { init : init };
 
-    </div>
-</body>
-
-</head>
+            })();
+        </script>
+        <script>
+                Page.init();
+        </script>
+    </body>
+</html>
